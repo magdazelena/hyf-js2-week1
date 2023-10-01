@@ -60,12 +60,41 @@ function generateListings(numberOfListings) {
 
 const listings = generateListings(37);
 
-listings.forEach((whatever) => {
-  console.log(whatever.size);
-});
+// listings.forEach((whatever) => {
+//   console.log(whatever.size);
+// });
 
-const price = listings.map((listing) => {
-  return listing.price;
-});
+// const price = listings.map((listing) => {
+//   return listing.price;
+// });
 
-console.log(price);
+//console.log(price);
+
+// const cheapListings = listings.filter((listing) => listing.price < 1000);
+// console.log(cheapListings);
+
+// const expensiveListings = listings.filter((listing) => listing.price > 1000);
+// const highPrices = expensiveListings.map((listing) => listing.price);
+// console.log(expensiveListings);
+// console.log(highPrices);
+
+// const expensiveListings1 = listings
+//   .filter((listing) => listing.price > 1000)
+//   .map((listing) => listing.price);
+
+// console.log(expensiveListings1);
+
+console.log(listings);
+const listingsWithParking = listings.filter((listing) =>
+  listing.facilities.includes("Parkering")
+);
+// const listingsWithParking2 = listings.filter(
+//   (listing) =>
+//     listing.facilites.filter((facilitity) => facilitity === "Parkering")
+//       .length > 0
+// );
+
+const listingsWithParking3 = listings.filter((listing) =>
+  listing.facilities.some((value) => value === "Parkering")
+);
+console.log(listingsWithParking3);
