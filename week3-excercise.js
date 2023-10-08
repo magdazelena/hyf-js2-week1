@@ -43,3 +43,24 @@ function incrementCounter() {
 }
 
 document.addEventListener("DOMContentLoaded", main);
+
+const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+
+// array.reduce(callback, initialValue);
+// callback function inside reduce: (accumulator, currentValue, index?)
+const sumWithInitial = array1.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue
+);
+
+console.log(sumWithInitial);
+// Expected output: 10
+
+// [ {..., quality: 'bad'}, {..., quality: 'good'}]
+
+// array.reduce(callback, {goodMovies: 0, badMovies: 0, avgMovies: 0})
+
+//callback -> (acc, current) => { if(current.quality === 'bad') return {...acc, badMovies: acc.badMovies + 1 }}
