@@ -6,18 +6,36 @@ function main() {
 
   const button2 = document.getElementById("button-2");
 
-  button2.addEventListener("click", incrementCounter);
-  button2.addEventListener("click", logSomethingIn3sec);
+  //button2.addEventListener("click", incrementCounter);
+  button2.addEventListener("click", () => logSomethingIn3sec(1000));
+  //button2.addEventListener("click", keepIncrementing);
+}
+const delayTime = 50; // this is because something
+
+function sendMessageToController() {
+  console.log("hey there");
+}
+function logSomethingIn3sec(delay) {
+  setTimeout(sendMessageToController, delay);
 }
 
-function logSomethingIn3sec() {
-  setTimeout(function () {
-    console.log("hello there");
-  }, 3000);
+let interval;
+function keepIncrementing() {
+  interval = setInterval(incrementCounter, 1000);
 }
 
 let counter = 0;
+
+function increment() {
+  return (counter += 1);
+}
+
+console.log(increment());
+
 function incrementCounter() {
+  if (counter > 5) {
+    if (interval) clearInterval(interval);
+  }
   console.log(counter);
   //counter += 1;
   counter = counter + 1;
