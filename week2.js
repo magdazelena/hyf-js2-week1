@@ -62,13 +62,21 @@ someLogic();
 
 // anonymous functions
 
-//named function:
+// named function:
 function someLogic() {
   console.log("named");
 }
 someLogic();
 
-(function () {
+button.addEventListener("click", function () {
+  //doing something
+});
+
+button.addEventListener("click", someLogic);
+
+const someVar = (function () {
+  //something
+})(function () {
   console.log("anonymous");
 })();
 
