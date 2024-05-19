@@ -1,6 +1,10 @@
-window.addEventListener("DOMContentLoaded", createFavouriteDishes);
+window.addEventListener("DOMContentLoaded", function () {
+  createFavouriteDishes();
+  console.log("hey");
+});
 
-function createFavouriteDishes() {
+function createFavouriteDishes(arg) {
+  console.log(arg);
   const title = window.document.getElementsByTagName("title");
   console.log(title);
   const ul = document.querySelector("ul");
